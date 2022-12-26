@@ -1,0 +1,45 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Course } from './course';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CourseService {
+
+  private baseURL="http://localhost:8080/courses";
+  constructor(private httpClient:HttpClient) {}
+
+
+  getCourseList():Observable<Course[]>{
+    return this.httpClient.get<Course[]>(`${this.baseURL}`);
+    
+}
+
+  createCourse(cour:Course):Observable<Object>{
+  return this.httpClient.post(`${this.baseURL}`,cour);
+  }
+
+  getCourseById(id:number):Observable<Course>{
+    return this.httpClient.get<Course>(`${this.baseURL}/${id}`);
+  }
+  
+  findByCourseId(id:number):Observable<Course[]>{
+    return this.httpClient.get<Course[]>(`${this.baseURL}/search-id/${id}`);
+  }
+
+  getCourseByTitle(title:string):Observable<Course[]>{
+    return this.httpClient.get<Course[]>(`${this.baseURL}/search-title/${title}`);
+  }
+
+  updateCourse(cour:Course):Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}`,cour);
+  }
+  
+  deletecourse(id:number):Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
+}
+
+

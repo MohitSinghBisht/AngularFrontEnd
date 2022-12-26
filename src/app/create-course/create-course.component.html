@@ -1,0 +1,48 @@
+<div  class="col-md-8 offset-md-3">
+  <h3 style="text-align: center;">Add Course</h3>
+  <!-- <div class="alert alert-primary" role="alert" *ngIf="error">
+    <p *ngFor="let c of error">{{c.defaultMessage}}</p>
+  </div> -->
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="error">
+    <p *ngFor="let c of error">{{c.defaultMessage}}</p>
+  </div>
+<form (ngSubmit)="OnSubmit()" #f="ngForm">
+<div class="form-group">
+  <label >Serial Number</label>
+  <input type="number" class="form-control" id="Serial-Number" [(ngModel)]="cour.sno" ngModel name="Serial-Number" required #sno="ngModel">
+  <span  class="help-block"  *ngIf="sno.invalid && (sno.dirty || sno.touched)"
+  class="alert" style="color: red; font-size: small;">Cannot be empty</span>  
+</div>
+  <div class="form-group">
+  <label >Title</label>
+  <input type="text" class="form-control" id="Title" [(ngModel)]="cour.title" ngModel name="Title" required>
+  </div>
+  <div class="form-group">
+  <label >Technology</label>
+  <input type="text" class="form-control" id="Technology" [(ngModel)]="cour.technology"  ngModel name="Technology" required>
+  </div>
+  <div class="form-group">
+    <label >Company-Id</label>
+    <input type="number" class="form-control" id="Company-Id" [(ngModel)]="Comp.compId" ngModel name="Company-Id" required>
+      </div>
+  <div class="form-group">
+    <label >Company-Name</label>
+    <input type="text" class="form-control" id="Company-Name" [(ngModel)]="Comp.compName" ngModel name="Company-Name" required>
+      </div>
+      <div class="form-group"  *ngFor="let add of addweb;let i=index">
+        <label >Website-Id</label>
+        <input type="text" class="form-control" id="Website-Id" [(ngModel)]="add.webId" ngModel name="Website-Id" >
+            <label >Website-Name</label>
+            <input type="text" class="form-control" id="Website-Name" [(ngModel)]="add.webName" ngModel name="Website-Name" >
+                <label >Website-Rating</label>
+                <input type="text" class="form-control" id="Website-Rating" [(ngModel)]="add.webrating" ngModel name="Website-Rating">
+                <button (click)="removeWebiste(i)" class="btn btn-danger">-</button>
+                  </div>
+                  <button (click)="addWebsite()" class="btn btn-primary">+</button>
+  <div class="form-group">
+  <label >Price	</label>
+  <input type="number" class="form-control" id="Price" [(ngModel)]="cour.price" ngModel name="price" required>
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="!f.valid">Submit</button>
+</form>
+</div>

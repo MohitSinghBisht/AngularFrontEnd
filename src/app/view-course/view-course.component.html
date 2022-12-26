@@ -1,0 +1,31 @@
+<h3 style="text-align: center;"> Course Detail</h3>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Title</th>
+        <th scope="col">Technology</th>
+        <th scope="col">Comp-Id</th>
+        <th scope="col">Comp-Name</th>
+        <th scope="col">WId   WName  WRating</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{cour.sno}}</td>
+        <td>{{cour.title}}</td>
+        <td>{{cour.technology}}</td>
+        <td>{{cour.provider.compId}}</td>
+        <td>{{cour.provider.compName}}</td>
+        <td>
+          <tr *ngFor="let c of cour.weblist">
+            <td>{{c.webId}}</td>
+            <td>{{c.webName}}</td>
+            <td>&#11088; {{c.webrating}}</td>
+          </tr>
+        </td>
+        <td>&#8377; {{cour.price}}</td>
+      </tr>
+    </tbody>
+  </table>

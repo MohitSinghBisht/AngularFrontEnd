@@ -1,0 +1,39 @@
+<h2 style="text-align: center;">COURSE-LIST</h2>
+<div>
+<input  type="text" placeholder="Search" (input)="searchviewer($event)">
+<button class="btn btn-success" id="no" (click)="sendit()">Search</button>
+</div>
+<br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Title</th>
+        <th scope="col">Technology</th>
+        <th scope="col">Comp-Name</th>
+        <th scope="col">WName WRating</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of course" id="why">
+        <td>{{c.sno}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.technology}}</td>
+        <td>{{c.provider.compName}}</td>
+        <td>
+          <tr *ngFor="let i of c.weblist">
+            <td>{{i.webName}}</td>
+            <td>&#11088; {{i.webrating}}</td>
+          </tr>
+        </td>
+        <td>&#8377; {{c.price}}</td>
+        <td>
+          <button class="btn btn-success" routerLink="update-course" (click)="updatecourse(c.sno)">Update</button>
+          <button class="btn btn-danger" id="his" routerLink="delete-course" (click)="deletecourse(c.sno)">Delete</button>
+          <button class="btn btn-info"  id="his" routerLink="view-course" (click)="viewcourse(c.sno)">View</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
