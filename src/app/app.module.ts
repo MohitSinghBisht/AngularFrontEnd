@@ -11,6 +11,7 @@ import { ViewCourseComponent } from './view-course/view-course.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchingViewComponent } from './searching-view/searching-view.component';
 import { SearchIdComponent } from './search-id/search-id.component';
+import { SortComponent } from './sort/sort.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { SearchIdComponent } from './search-id/search-id.component';
     ViewCourseComponent,
     SearchingViewComponent,
     SearchIdComponent,
+    SortComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,13 +2,15 @@
 <div>
 <input  type="text" placeholder="Search" (input)="searchviewer($event)">
 <button class="btn btn-success" id="no" (click)="sendit()">Search</button>
+
+
 </div>
 <br>
 <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">S.No</th>
-        <th scope="col">Title</th>
+        <th scope="col">Title <a  type="button" (click)="sortsend()">&#709;</a></th>
         <th scope="col">Technology</th>
         <th scope="col">Comp-Name</th>
         <th scope="col">WName WRating</th>

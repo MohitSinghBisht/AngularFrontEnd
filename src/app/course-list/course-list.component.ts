@@ -16,8 +16,7 @@ export class CourseListComponent implements OnInit {
   dat:any;
   id:number;
   title:string;
-
-
+  task:"title";
 constructor(private courseservice:CourseService,
   private router:Router){
 
@@ -74,4 +73,11 @@ sendit(){
    
   }
 }
+
+
+sortsend(){
+  this.router.navigate(["sort-me"]);
+}
+
+
 }

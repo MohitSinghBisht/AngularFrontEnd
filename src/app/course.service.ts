@@ -33,6 +33,10 @@ export class CourseService {
     return this.httpClient.get<Course[]>(`${this.baseURL}/search-title/${title}`);
   }
 
+  SortByTitle(task:string):Observable<Course[]>{
+    return this.httpClient.get<Course[]>(`${this.baseURL}/sort/${task}`);
+  }
+
   updateCourse(cour:Course):Observable<Object>{
     return this.httpClient.put(`${this.baseURL}`,cour);
   }

@@ -5,6 +5,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { DeleteCourseComponent } from './delete-course/delete-course.component';
 import { SearchIdComponent } from './search-id/search-id.component';
 import { SearchingViewComponent } from './searching-view/searching-view.component';
+import { SortComponent } from './sort/sort.component';
 import { UpdateCourseComponent } from './update-course/update-course.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
 {path:'view-course/:id',component:ViewCourseComponent},
 {path:'search-course/:title',component:SearchingViewComponent},
 {path:'search-id/:id',component:SearchIdComponent},
+{path:'sort-me',component:SortComponent}
 
 ];
 
