@@ -2,9 +2,21 @@
 <div>
 <input  type="text" placeholder="Search" (input)="searchviewer($event)">
 <button class="btn btn-success" id="no" (click)="sendit()">Search</button>
-
-
 </div>
+<br>
+<form (ngSubmit)="pagsub()">
+<div class="input-group input-group-sm mb-6" >
+  <div class="input-group-prepend">
+  </div>
+  <input type="text" placeholder="pageNumber" [(ngModel)]="info.pageNumber" name="pageNumber">
+  <input type="text" placeholder="limit" [(ngModel)]="info.limit" name="limit">
+  <input type="text" placeholder="shortType" [(ngModel)]="info.shortType" name="shortType">         
+  <input type="text" placeholder="shortField" [(ngModel)]="info.shortField" name="shortField"> 
+  <input type="text" placeholder="searchitem" [(ngModel)]="info.searchitem" name="searchitem" >
+  <button class="btn btn-success" type="submit">Search</button>
+</div>
+</form>
+
 <br>
 <table class="table table-striped">
     <thead>
@@ -19,7 +31,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of course" id="why">
+      <tr *ngFor="let c of course">
         <td>{{c.sno}}</td>
         <td>{{c.title}}</td>
         <td>{{c.technology}}</td>

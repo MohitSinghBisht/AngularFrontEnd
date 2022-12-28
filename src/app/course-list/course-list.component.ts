@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Company } from '../company';
 import { Course } from '../course';
 import { CourseService } from '../course.service';
+import { Info } from '../info';
 import { website } from '../website';
 
 @Component({
@@ -17,6 +18,7 @@ export class CourseListComponent implements OnInit {
   id:number;
   title:string;
   task:"title";
+  info: Info=new Info();
 constructor(private courseservice:CourseService,
   private router:Router){
 
@@ -77,6 +79,15 @@ sendit(){
 
 sortsend(){
   this.router.navigate(["sort-me"]);
+}
+
+
+pagsub(){
+  this.courseservice.pagination(this.info).subscribe(data=>{
+    console.log(data);
+  },error=>console.error()
+  )
+
 }
 
 

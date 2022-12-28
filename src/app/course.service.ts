@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from './course';
+import { Info } from './info';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,9 @@ export class CourseService {
   
   deletecourse(id:number):Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
+  pagination(info:Info):Observable<Object>{
+    return this.httpClient.post<Info>(`${this.baseURL}`,info);
   }
 }
 

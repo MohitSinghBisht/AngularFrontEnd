@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchingViewComponent } from './searching-view/searching-view.component';
 import { SearchIdComponent } from './search-id/search-id.component';
 import { SortComponent } from './sort/sort.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SortComponent } from './sort/sort.component';
     SearchingViewComponent,
     SearchIdComponent,
     SortComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
