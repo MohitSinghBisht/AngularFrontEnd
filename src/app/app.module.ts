@@ -33,7 +33,6 @@ import { PaginationComponent } from './pagination/pagination.component';
     AppRoutingModule,
    HttpClientModule,
    FormsModule,
-   ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

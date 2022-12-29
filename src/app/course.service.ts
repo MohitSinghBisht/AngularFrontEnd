@@ -45,9 +45,12 @@ export class CourseService {
   deletecourse(id:number):Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
+
   pagination(info:Info):Observable<Object>{
-    return this.httpClient.post<Info>(`${this.baseURL}`,info);
+    console.log(info);
+    return this.httpClient.post<Course[]>(`${this.baseURL}/pagination`,info);
   }
+
 }
 
 

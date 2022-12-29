@@ -1,9 +1,9 @@
 export class Info{
-    
-    pageNumber:number;
-	limit:number;
-    shortType:string;
-	shortField:string;
+
+	pageSize:number=1;
+	limit:number=3;
+	shortType:string="";
+	shortField:string="";
 	searchitem:string;
 
 }

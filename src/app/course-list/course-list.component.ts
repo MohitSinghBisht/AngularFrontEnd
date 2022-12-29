@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NumberValueAccessor } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Company } from '../company';
 import { Course } from '../course';
@@ -19,14 +20,18 @@ export class CourseListComponent implements OnInit {
   title:string;
   task:"title";
   info: Info=new Info();
+  cl:any
+  flag:boolean=true;
+  sizer:number;
+
 constructor(private courseservice:CourseService,
   private router:Router){
 
 }
 
 ngOnInit(){
-
   this.getCourseList();
+  this.sizer=this.info.pageSize;
 
 }
 
@@ -81,14 +86,49 @@ sortsend(){
   this.router.navigate(["sort-me"]);
 }
 
-
 pagsub(){
   this.courseservice.pagination(this.info).subscribe(data=>{
     console.log(data);
+    this.cl=data;
   },error=>console.error()
   )
 
 }
 
+setvalueforHidden(){
+  this.flag=!this.flag
+}
+
+setmyvalue(){
+ if(this.info.pageSize>=2){
+  this.info.pageSize--;
+  console.log(this.info.pageSize)
+  this.pagsub();
+ }
+}
+
+setvalue(){
+  if(this.info.pageSize<=this.info.limit){
+  this.info.pageSize++;
+  this.pagsub();
+}
+}
+
+
+sorttype(tos:any){
+  this.info.shortType=tos;
+  this.pagsub();
+}
+
+
+sortfield(sot:any){
+  this.info.shortField=sot;
+  this.pagsub();
+}
+
+searchvalue(dsa:any){
+this.info.searchitem=dsa;
+this.pagsub();
+}
 
 }
