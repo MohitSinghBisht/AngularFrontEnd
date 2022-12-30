@@ -8,10 +8,7 @@ import { CreateCourseComponent } from './create-course/create-course.component';
 import { UpdateCourseComponent } from './update-course/update-course.component';
 import { DeleteCourseComponent } from './delete-course/delete-course.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchingViewComponent } from './searching-view/searching-view.component';
-import { SearchIdComponent } from './search-id/search-id.component';
-import { SortComponent } from './sort/sort.component';
+import { FormsModule } from '@angular/forms';
 import { PaginationComponent } from './pagination/pagination.component';
 
 
@@ -23,9 +20,6 @@ import { PaginationComponent } from './pagination/pagination.component';
     UpdateCourseComponent,
     DeleteCourseComponent,
     ViewCourseComponent,
-    SearchingViewComponent,
-    SearchIdComponent,
-    SortComponent,
     PaginationComponent,
   ],
   imports: [

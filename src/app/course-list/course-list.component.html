@@ -1,102 +1,11 @@
+<br>
 <h2 style="text-align: center;">COURSE-LIST</h2>
-<br>
-<br>
-<div>
-<input type="text" placeholder="Search" #t/>
-<button class="btn btn-success" id="no" (click)="searchvalue(t.value)">Search</button>
-</div>
-<div>
-<button class="btn btn-danger" (click)="setvalueforHidden()">Filter</button>
-<div [hidden]="flag">
-  <label >SortField:</label>
-  <select #whatu (click)="sortfield(whatu.value)">
-    <option value="" selected>default</option>
-    <option  value="title">title</option>
-    <option value="sno">sno</option>
-    <option value="technology">technology</option>
-  </select>
-  <br><br>
-  <label>SortType:</label>
-  <select #utser (click)="sorttype(utser.value)">
-    <option  value=""></option>
-    <option  value="asc">asc</option>
-    <option value="desc">desc</option>
-  </select>
-
-</div>
-</div>
-<br>
-<br>
-<br>
-<br>
-
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">S.No</th>
-        <th scope="col">Title</th>
-        <th scope="col">Technology</th>
-        <th scope="col">Comp-Name</th>
-        <th scope="col">WName WRating</th>
-        <th scope="col">Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of cl">
-        <td>{{c.sno}}</td>
-        <td>{{c.title}}</td>
-        <td>{{c.technology}}</td>
-        <td>{{c.provider.compName}}</td>
-        <td>
-          <tr *ngFor="let i of c.weblist">
-            <td>{{i.webName}}</td>
-            <td>&#11088; {{i.webrating}}</td>
-          </tr>
-        </td>
-        <td>&#8377; {{c.price}}</td>
-       </tr>
-    </tbody>
-  </table>
-  <br>
- 
-    <button class="btn btn-info" (click)="setmyvalue()">Previous</button>
-    <button class="btn btn-info" (click)="setvalue()">Next</button>  
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">S.No</th>
-        <th scope="col">Title <a  type="button" (click)="sortsend()">&#709;</a></th>
+        <th scope="col">Title</th>
         <th scope="col">Technology</th>
         <th scope="col">Comp-Name</th>
         <th scope="col">WName WRating</th>

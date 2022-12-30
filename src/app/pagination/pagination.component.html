@@ -1,1 +1,65 @@
-<p>pagination works!</p>
+<br>
+<h2 style="text-align: center;">SEARCHING</h2>
+<br>
+<div id="nope">
+<input type="text" style="height: 35px;" placeholder="Search" #t/>
+<button class="btn btn-success" id="no" (click)="searchvalue(t.value)">Search</button>
+</div>
+
+<div>
+<button class="btn btn-danger" (click)="setvalueforHidden()">Filter</button>
+<div [hidden]="flag" id="er">
+  <label>SortField:
+  <select #whatu (click)="sortfield(whatu.value)">
+    <option  value="title">title</option>
+    <option value="sno">sno</option>
+    <option value="technology">technology</option>
+  </select>
+</label>
+  <br><br>
+  <label>SortType:
+  <select #utser (click)="sorttype(utser.value)">
+    <option  value="asc">asc</option>
+    <option value="desc">desc</option>
+  </select>
+</label>
+</div>
+</div>
+<br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Title</th>
+        <th scope="col">Technology</th>
+        <th scope="col">Comp-Name</th>
+        <th scope="col">WName WRating</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cl">
+        <td>{{c.sno}}</td>
+        <td>{{c.title}}</td>
+        <td>{{c.technology}}</td>
+        <td>{{c.provider.compName}}</td>
+        <td>
+          <tr *ngFor="let i of c.weblist">
+            <td>{{i.webName}}</td>
+            <td>&#11088; {{i.webrating}}</td>
+          </tr>
+        </td>
+        <td>&#8377; {{c.price}}</td>
+       </tr>
+    </tbody>
+  </table>
+  <br>
+      <div style="text-align: center;">  
+    <button class="btn btn-info" (click)="setmyvalue()" >Previous</button>
+    <button class="btn btn-info" (click)="setvalue()" id="next">Next</button>  
+</div>
+
+
+<div>
+<p></p>
+</div>
