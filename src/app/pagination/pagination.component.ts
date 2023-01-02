@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Course } from '../course';
 import { CourseService } from '../course.service';
 import { Info } from '../info';
+import { Page } from '../page';
 
 @Component({
   selector: 'app-pagination',
@@ -14,9 +15,8 @@ import { Info } from '../info';
 export class PaginationComponent implements OnInit{
 
   info: Info=new Info();
-  cl:any
+  cl:Page=new Page();
   flag:boolean=true;
-  sizer:number;
 
 
   constructor(private courseservice:CourseService,
@@ -29,9 +29,16 @@ export class PaginationComponent implements OnInit{
   }
 
 pagsub(){
-  this.courseservice.pagination(this.info).subscribe(data=>{
+  this.courseservice.pagination(this.info).subscribe((data:any)=>{
+    //console.log(data.mylist);
     console.log(data);
-    this.cl=data;
+   this.cl.mylist=data.mylist;
+   this.cl.count=data.count;
+   this.cl.lastPage=data.lastPage; 
+   this.cl.pageSize=data.pageSize;
+   this.cl.limit=data.limit;
+   console.log(this.cl);
+    
   },error=>console.error()
   )
 
@@ -42,20 +49,21 @@ setvalueforHidden(){
 }
 
 setmyvalue(){
- if(this.info.pageSize>=2){
+ if(this.cl.pageSize>1){
   this.info.pageSize--;
-  console.log(this.info.pageSize)
   this.pagsub();
+  console.log(this.cl.pageSize);
  }
 }
 
 setvalue(){
-  if(this.info.pageSize<=this.info.limit){
+ 
+  if(this.cl.pageSize<=(this.cl.lastPage-1)){
   this.info.pageSize++;
   this.pagsub();
+  console.log(this.cl.pageSize);
 }
 }
-
 
 sorttype(tos:any){
   this.info.shortType=tos;
@@ -73,6 +81,9 @@ this.info.searchitem=dsa;
 this.pagsub();
 }
 
-  
+setlimit(dam:any){
+this.info.limit=dam;
+this.pagsub();
+}
 
 }

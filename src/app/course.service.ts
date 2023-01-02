@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from './course';
 import { Info } from './info';
+import { Page } from './page';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class CourseService {
 
   pagination(info:Info):Observable<Object>{
     console.log(info);
-    return this.httpClient.post<Course[]>(`${this.baseURL}/pagination`,info);
+    return this.httpClient.post(`${this.baseURL}/pagination`,info);
   }
 
 }

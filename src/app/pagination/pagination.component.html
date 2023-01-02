@@ -38,7 +38,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of cl">
+      <tr *ngFor="let c of cl.mylist">
         <td>{{c.sno}}</td>
         <td>{{c.title}}</td>
         <td>{{c.technology}}</td>
@@ -58,8 +58,14 @@
     <button class="btn btn-info" (click)="setmyvalue()" >Previous</button>
     <button class="btn btn-info" (click)="setvalue()" id="next">Next</button>  
 </div>
-
-
+<label>Courses per page:
+  <select #d (click)="setlimit(d.value)">
+    <option  value="2">2</option>
+    <option  value="3" selected>3</option>
+    <option value="4">4</option>
+    <option value="6">6</option>
+  </select>
+</label>
 <div>
-<p></p>
+
 </div>
