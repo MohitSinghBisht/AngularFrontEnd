@@ -25,7 +25,7 @@ export class PaginationComponent implements OnInit{
   }
 
   ngOnInit() {
-    
+    this.pagsub();
   }
 
 pagsub(){
@@ -37,6 +37,7 @@ pagsub(){
    this.cl.lastPage=data.lastPage; 
    this.cl.pageSize=data.pageSize;
    this.cl.limit=data.limit;
+   this.info.limit=data.limit;
    console.log(this.cl);
     
   },error=>console.error()
