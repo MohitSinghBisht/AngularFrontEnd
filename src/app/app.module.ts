@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
 import { CreateCourseComponent } from './create-course/create-course.component';
 import { UpdateCourseComponent } from './update-course/update-course.component';
-import { DeleteCourseComponent } from './delete-course/delete-course.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { FormsModule } from '@angular/forms';
 import { PaginationComponent } from './pagination/pagination.component';
@@ -18,7 +17,6 @@ import { PaginationComponent } from './pagination/pagination.component';
     CourseListComponent,
     CreateCourseComponent,
     UpdateCourseComponent,
-    DeleteCourseComponent,
     ViewCourseComponent,
     PaginationComponent,
   ],
