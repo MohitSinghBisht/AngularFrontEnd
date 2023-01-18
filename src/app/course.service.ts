@@ -1,17 +1,25 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from './course';
 import { Info } from './info';
-import { Page } from './page';
+import { JwtAuthRequest } from './JwtAuthRequest';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class CourseService {
+
+
+export class CourseService{
+
 
   private baseURL="http://localhost:8080/courses";
   constructor(private httpClient:HttpClient) {}
+  
+  createToken(jwt:JwtAuthRequest):Observable<any>{
+    return this.httpClient.post(`${this.baseURL}/login`,jwt);
+    }
 
 
   getCourseList():Observable<Course[]>{

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
@@ -9,6 +9,10 @@ import { UpdateCourseComponent } from './update-course/update-course.component';
 import { ViewCourseComponent } from './view-course/view-course.component';
 import { FormsModule } from '@angular/forms';
 import { PaginationComponent } from './pagination/pagination.component';
+import { LoginComponent } from './login/login.component';
+import { CustomInterceptor } from './custom.interceptor';
+import { LogoutComponent } from './logout/logout.component';
+
 
 
 @NgModule({
@@ -19,6 +23,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     UpdateCourseComponent,
     ViewCourseComponent,
     PaginationComponent,
+    LoginComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,10 @@ import { PaginationComponent } from './pagination/pagination.component';
    HttpClientModule,
    FormsModule,
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,useClass:CustomInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

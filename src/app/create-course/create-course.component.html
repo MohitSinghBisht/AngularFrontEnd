@@ -1,3 +1,24 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" routerLink="" style="text-align: center;">Course Management</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/courses">&spades; Home</a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" routerLink="/show-page">&diams; Search</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/create-course">&clubs; Add Course</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a  routerLink="/logout" class="btn btn-danger" type="button">Logout</a>
+        </form>
+      </div>
+    </nav>
+    <br>
 <div  class="col-md-8 offset-md-3">
   <h3 style="text-align: center;">Add Course</h3>
   <!-- <div class="alert alert-primary" role="alert" *ngIf="error">
@@ -45,4 +66,5 @@
     </div>
     <button class="btn btn-success" type="submit" [disabled]="!f.valid">Submit</button>
 </form>
+</div>
 </div>
