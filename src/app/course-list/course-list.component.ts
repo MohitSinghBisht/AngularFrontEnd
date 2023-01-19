@@ -16,15 +16,15 @@ export class CourseListComponent implements OnInit {
   id:number;
   title:string;
   task:"title";
-
-constructor(private courseservice:CourseService,
-  private router:Router){
-
-}
+  result=false;
+constructor(private courseservice:CourseService,private router:Router){}  
 
 ngOnInit(){
   this.getCourseList();
-
+  setTimeout(()=>{
+    this.result=true;
+  },4000)
+  
 }
 
 private getCourseList(){
@@ -37,21 +37,19 @@ private getCourseList(){
 }
 
 updatecourse(id:number){
-this.router.navigate(["update-course",id]);
+this.router.navigate(["/update-course",id]);
 }
 
 
 deletecourse(id:number){
   this.courseservice.deletecourse(id).subscribe(data=>{
     this.getCourseList();
-  }
-
-  )
+  },error=>console.log(error))
 }
 
 
 viewcourse(id:number){
-  this.router.navigate(["view-course",id]);
+  this.router.navigate(["/view-course",id]);
 }
 
 searchviewer(e:Event){
@@ -71,7 +69,7 @@ searchviewer(e:Event){
 //   this.router.navigate(["search-id",this.id]);
    
 //   }
-// }
+// } 
 
 
 }

@@ -12,6 +12,7 @@ export class LogoutComponent implements OnInit {
  constructor(private d:Router){} 
   
  ngOnInit(){
+  //alert("Logged Out")
     localStorage.clear();
     this.d.navigateByUrl('/login');
   }

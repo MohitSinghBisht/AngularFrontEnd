@@ -1,6 +1,7 @@
+<div id="load" [hidden]="result"></div>
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" routerLink="" style="text-align: center;">Course Management</a>
+      <a class="navbar-brand"  style="text-align: center;">Course Management</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -47,9 +48,9 @@
         </td>
         <td>&#8377; {{c.price}}</td>
         <td>
-          <button class="btn btn-success" routerLink="update-course" (click)="updatecourse(c.sno)">Update</button>
-          <button class="btn btn-primary" id="his" routerLink="delete-course" (click)="deletecourse(c.sno)">Delete</button>
-          <button class="btn btn-info"  id="his" routerLink="view-course" (click)="viewcourse(c.sno)">View</button>
+          <button class="btn btn-success" routerLink="/update-course" (click)="updatecourse(c.sno)">Update</button>
+          <button class="btn btn-primary" id="his"  (click)="deletecourse(c.sno)">Delete</button>
+          <button class="btn btn-info"  id="his" routerLink="/view-course" (click)="viewcourse(c.sno)">View</button>
         </td>
       </tr>
     </tbody>

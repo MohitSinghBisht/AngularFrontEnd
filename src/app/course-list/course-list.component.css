@@ -11,3 +11,14 @@
 #er{
     padding-top: 20px;
 }
+
+#load{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff
+    url('https://media2.giphy.com/media/ZO9b1ntYVJmjZlsWlm/giphy.gif?cid=ecf05e47yag77jqbam1c9our0tl6j2znk1vcdx11e5vvvs80&rid=giphy.gif&ct=g')
+    no-repeat center;
+    z-index: 999;
+}
+  

@@ -1,3 +1,4 @@
+import { TypeofExpr } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { OnInit} from '@angular/core'
 import { ActivatedRoute } from '@angular/router';
@@ -15,17 +16,14 @@ export class ViewCourseComponent implements OnInit{
 
  constructor(private route:ActivatedRoute,
   private serv:CourseService){} 
-  
-  
+
   ngOnInit() {
     this.id=this.route.snapshot.params['id'];
     this.cour=new Course();
     this.serv.getCourseById(this.id).subscribe(data=>{
       this.cour=data;
-    }
-
-    )
+    })
   }
 
-
 }
+

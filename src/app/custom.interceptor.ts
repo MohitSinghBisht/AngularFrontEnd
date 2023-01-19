@@ -17,4 +17,5 @@ export class CustomInterceptor implements HttpInterceptor {
     request=request.clone({headers:request.headers.set('Authorization','MohitB '+ localToken)});
     return next.handle(request);
   }
+  
 }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Course } from './course';
 import { Info } from './info';
 import { JwtAuthRequest } from './JwtAuthRequest';
+import { User } from './User';
 
 
 @Injectable({
@@ -21,24 +22,27 @@ export class CourseService{
     return this.httpClient.post(`${this.baseURL}/login`,jwt);
     }
 
+   createUser(us:User):Observable<any>{
+    return this.httpClient.post(`${this.baseURL}/Signup`,us);
+   } 
 
   getCourseList():Observable<Course[]>{
     return this.httpClient.get<Course[]>(`${this.baseURL}`); 
 }
 
   createCourse(cour:Course):Observable<Object>{
-  return this.httpClient.post(`${this.baseURL}`,cour);
+  return this.httpClient.post(`${this.baseURL}/add`,cour);
   }
 
   getCourseById(id:number):Observable<Course>{
     return this.httpClient.get<Course>(`${this.baseURL}/${id}`);
   }
   updateCourse(cour:Course):Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}`,cour);
+    return this.httpClient.put(`${this.baseURL}/update`,cour);
   }
   
   deletecourse(id:number):Observable<Object>{
-    return this.httpClient.delete(`${this.baseURL}/${id}`);
+    return this.httpClient.delete(`${this.baseURL}/del/${id}`);
   }
 
   pagination(info:Info):Observable<Object>{
