@@ -50,6 +50,11 @@ export class CourseService{
     return this.httpClient.post(`${this.baseURL}/pagination`,info);
   }
 
+  isloggedin(){
+    return localStorage.getItem('token')!=null;
+  }
+  
+
 }
 
 

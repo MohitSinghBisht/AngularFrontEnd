@@ -23,7 +23,7 @@ ngOnInit(){
   this.getCourseList();
   setTimeout(()=>{
     this.result=true;
-  },4000)
+  },3000)
   
 }
 
