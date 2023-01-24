@@ -11,9 +11,7 @@ import { User } from './User';
   providedIn: 'root'
 })
 
-
 export class CourseService{
-
 
   private baseURL="http://localhost:8080/courses";
   constructor(private httpClient:HttpClient) {}
